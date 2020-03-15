@@ -50,6 +50,7 @@ class UalaListAdapter(
             }
             is MealError -> {
                 holder.view.nameTextView.text = "ups!"
+                holder.view.categoryTextView.text = "ups!"
             }
         }
     }

@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
 import com.matiaslev.ualatest.R
+import com.matiaslev.ualatest.domain.AddRandomMealUseCase
 import com.matiaslev.ualatest.domain.GetAllMealsUseCase
 import com.matiaslev.ualatest.domain.GetAllMealsUseCaseImpl
 import com.matiaslev.ualatest.domain.SearchMealsUseCase
@@ -13,8 +14,9 @@ class MainActivity : AppCompatActivity() {
 
     private val getAllMealsUseCase by inject<GetAllMealsUseCase>()
     private val searchMealsUseCase by inject<SearchMealsUseCase>()
+    private val addRandomMealUseCase by inject<AddRandomMealUseCase>()
     private val viewModel  by viewModels<MealViewModel>() {
-        MainViewModelFactory(getAllMealsUseCase, searchMealsUseCase)
+        MainViewModelFactory(getAllMealsUseCase, searchMealsUseCase, addRandomMealUseCase)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {

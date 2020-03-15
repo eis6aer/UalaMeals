@@ -24,4 +24,22 @@ class Api {
             }
         }
     }
+
+    fun getRandomMeal(): Either<MealRemoteError, List<MealRemote>> {
+        val (_, _, result) = "https://www.themealdb.com/api/json/v1/1/random.php"
+            .httpGet()
+            .also { Log.d(Api::class.java.canonicalName, it.cUrlString()) }
+            .responseObject(MealRemote.ListDeserializer)
+
+
+
+        return when (result) {
+            is Result.Success -> {
+                Either.right(result.value.meals)
+            }
+            is Result.Failure -> {
+                Either.left(MealRemoteError)
+            }
+        }
+    }
 }

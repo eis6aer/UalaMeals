@@ -26,4 +26,6 @@ val ualaModule = module {
     single<GetAllMealsUseCase> { GetAllMealsUseCaseImpl(get()) }
 
     single<SearchMealsUseCase> { SearchMealsUseCaseImpl(get()) }
+
+    single<AddRandomMealUseCase> { AddRandomMealUseCaseImpl(get())  }
 }

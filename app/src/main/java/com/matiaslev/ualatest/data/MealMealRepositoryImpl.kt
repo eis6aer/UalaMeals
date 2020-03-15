@@ -34,4 +34,14 @@ class MealMealRepositoryImpl(
             else -> Either.right(mealsLocal.mapToMealData())
         }
     }
+
+    override fun addRandomMeal(): Either<MealError, MealData> {
+        return api.getRandomMeal().fold(
+            { randoMealError ->
+                Either.left(MealError)
+            }, {
+                Either.right(it.mapToMealLocal().mapToMealData().first())
+            }
+        )
+    }
 }
