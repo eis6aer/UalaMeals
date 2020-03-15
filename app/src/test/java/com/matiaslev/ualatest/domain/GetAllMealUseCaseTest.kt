@@ -5,7 +5,7 @@ import io.mockk.mockk
 import io.mockk.verify
 import org.junit.Test
 
-class MealDataUseCaseTest {
+class GetAllMealUseCaseTest {
     val bookRepository = mockk<MealRepository>(relaxed = true)
     private val useCaseListImpl = GetAllMealsUseCaseImpl(bookRepository)
 

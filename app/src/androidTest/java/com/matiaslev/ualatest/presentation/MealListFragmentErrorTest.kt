@@ -27,7 +27,7 @@ class MealListFragmentErrorTest : KoinTest {
 
     @Test
     fun mainFragmentErrorTest() {
-        onView(withText("ups!")).check(matches(isDisplayed()))
+        onView(withText("upsss!")).check(matches(isDisplayed()))
     }
 
     @After

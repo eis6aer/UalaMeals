@@ -49,7 +49,7 @@ class UalaListAdapter(
                 holder.view.categoryTextView.text = meal.category
             }
             is MealError -> {
-                holder.view.nameTextView.text = "ups!"
+                holder.view.nameTextView.text = "upsss!"
                 holder.view.categoryTextView.text = "ups!"
             }
         }
